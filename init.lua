@@ -228,7 +228,8 @@ vim.opt.rtp:prepend(lazypath)
 -- NOTE: Here is where you install your plugins.
 require('lazy').setup({
   -- NOTE: Plugins can be added with a link (or for a github repo: 'owner/repo' link).
-  'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
+  'tpope/vim-sleuth',
+  'github/copilot.vim';-- Detect tabstop and shiftwidth automatically
 
   -- NOTE: Plugins can also be added by using a table,
   -- with the first argument being the link and the following
@@ -253,6 +254,12 @@ require('lazy').setup({
         changedelete = { text = '~' },
       },
     },
+  },
+  { -- Adds autocorrect functionality to Neovim
+    'https://git.sr.ht/~swaits/thethethe.nvim',
+    lazy = true,
+    event = 'VeryLazy',
+    opts = {},
   },
 
   -- NOTE: Plugins can also be configured to run Lua code when they are loaded.
